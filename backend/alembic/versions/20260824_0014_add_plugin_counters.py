@@ -13,7 +13,7 @@ from alembic import op
 
 
 revision: str = "20260824_0014"
-down_revision: str | Sequence[str] | None = "20260812_0011"
+down_revision: str | Sequence[str] | None = "20260822_0013"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
@@ -34,8 +34,6 @@ def upgrade() -> None:
         "plugins",
         sa.Column("total_usage", sa.Integer(), nullable=False, server_default="0"),
     )
-
-    # 若需要，后续可写数据迁移将旧统计合并到新列中。
 
 
 def downgrade() -> None:
